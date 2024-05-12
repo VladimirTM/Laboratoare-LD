@@ -13,7 +13,7 @@ localparam modulo = 5;
 wire [3:0] o, w;
 reg reset;
 
-always @(posedge clk) begin
+always @(*) begin
     if(o == modulo)
         reset = 1;
     else
