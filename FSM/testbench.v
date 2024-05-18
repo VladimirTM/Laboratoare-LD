@@ -21,9 +21,9 @@ initial begin
     	begin
         #10;
         rst = 0;
-    	#5;
-    	rst = 1;
-  		#5;
+    	  #5;
+    	  rst = 1;
+  		  #5;
       	in = j[2];
         #5;
         clk = 1;
@@ -41,7 +41,11 @@ initial begin
         clk = 1;
       	#5;
         clk = 0;
-        #10;
+        #5;
+        clk = 1;
+      	#5;
+        clk = 0;
+        #10ș
     end
 end
 endmodule

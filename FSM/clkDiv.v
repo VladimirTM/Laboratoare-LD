@@ -3,7 +3,7 @@ module clkDiv(
   output reg clk_out
 );
   
-parameter division = 10;
+parameter division = 50000000;
   
 integer count = 1;
   

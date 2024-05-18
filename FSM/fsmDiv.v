@@ -20,7 +20,7 @@ wire clk_synthetic;
     .clk_out(clk_synthetic)
   );
 
-  always@(posedge clk_synthetic) begin
+  always@(posedge clk) begin
     case(q)
     S0:
     begin
@@ -77,7 +77,7 @@ wire clk_synthetic;
     endcase
 end
 
-always@(posedge clk_synthetic or negedge rst) begin
+always@(posedge clk or negedge rst) begin
   if(rst == 0)
         q <= S0;
   else if(clk_synthetic)
