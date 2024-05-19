@@ -19,7 +19,7 @@ initial begin
   	rst = 1;
   	for(j = 0; j < 8; j = j + 1)
     	begin
-        #10;
+        #5;
         rst = 0;
     	  #5;
     	  rst = 1;
@@ -45,7 +45,7 @@ initial begin
         clk = 1;
       	#5;
         clk = 0;
-        #10;
+        #5;
     end
 end
 endmodule
