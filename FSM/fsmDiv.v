@@ -1,10 +1,13 @@
 `include "clkDiv.v"
+`include "hex.v"
 
 module fsmDiv(
     input in,
     input clk,
     input rst,
-    output reg [1:0]out
+    output [6:0]o2,
+    output [6:0]o1,
+    output [1:0]o
 );
 
 parameter S0 = 0;
@@ -12,7 +15,7 @@ parameter S1 = 1;
 parameter S2 = 2;
 parameter S3 = 3;
 
-reg [1:0] q, q_next;
+reg [1:0] q, q_next, out;
 wire clk_synthetic;
   
   clkDiv DIV(
@@ -83,5 +86,17 @@ always@(posedge clk or negedge rst) begin
   else if(clk_synthetic)
         q <= q_next;
 end
+
+assign o = out;
+
+hex HEX1(
+    .h(5),
+    .d(o2)
+);
+
+hex HEX0(
+    .h(q),
+    .d(o1)
+);
 
 endmodule
