@@ -45,7 +45,7 @@ initial begin
         clk = 1;
       	#5;
         clk = 0;
-        #10ș
+        #10;
     end
 end
 endmodule
