@@ -3,7 +3,7 @@ module clkDiv(
   output reg clk_out
 );
   
-parameter division = 50000000;
+parameter division = 100000000; // 50.000.000 -> 1 secunda 
   
 integer count = 1;
   
