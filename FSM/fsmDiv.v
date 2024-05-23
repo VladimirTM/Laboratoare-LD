@@ -87,6 +87,8 @@ always@(posedge clk or negedge rst) begin
         q <= q_next;
 end
 
+assign o = out;
+
 hex HEX1(
     .h(5),
     .d(o2)
