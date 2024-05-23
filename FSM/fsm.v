@@ -76,6 +76,4 @@ always@(posedge clk or negedge rst) begin
     q <= q_next;
 end
 
-assign o = out;
-
 endmodule
